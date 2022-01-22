@@ -1,5 +1,6 @@
 import 'package:dietosure_task_app/widgets/custom_chip.dart';
 import 'package:dietosure_task_app/widgets/overview_card.dart';
+import 'package:dietosure_task_app/widgets/radar_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -89,6 +90,9 @@ class _RecentScreenState extends State<RecentScreen> {
                 amount: "\$30.00",
                 hasIconBg: false,
               ),
+              SizedBox(height: 20.w),
+              const Center(child: RadarProfile()),
+              SizedBox(height: 30.w),
               Container(
                 height: 54.w,
                 alignment: Alignment.center,

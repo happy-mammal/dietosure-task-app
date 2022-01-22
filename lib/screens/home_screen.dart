@@ -48,56 +48,60 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFFf2f8fd),
-        body: Padding(
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.w),
-          child: Column(
-            children: [
-              const InfoCard(),
-              SizedBox(height: 30.w),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Overview",
-                        style: GoogleFonts.poppins(
-                          color: const Color(0xFF3e4685),
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const InfoCard(),
+                SizedBox(height: 30.w),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Overview",
+                          style: GoogleFonts.poppins(
+                            color: const Color(0xFF3e4685),
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Icon(
-                        Icons.notifications_none,
-                        color: const Color(0xFF3e4685),
-                        size: 26.w,
-                      ),
-                    ],
-                  ),
-                  Text(
-                    "Sept,13,2020",
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xFF3e4685),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
+                        SizedBox(width: 10.w),
+                        Icon(
+                          Icons.notifications_none,
+                          color: const Color(0xFF3e4685),
+                          size: 26.w,
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 10.w),
-              ...List.generate(
-                _overviews.length,
-                (index) => OverviewCard(
-                  icon: _overviews[index]['icon'],
-                  title: _overviews[index]['title'],
-                  description: _overviews[index]['info'],
-                  amount: _overviews[index]['amount'],
-                  hasIconBg: true,
+                    Text(
+                      "Sept,13,2020",
+                      style: GoogleFonts.poppins(
+                        color: const Color(0xFF3e4685),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
-              )
-            ],
+                SizedBox(height: 10.w),
+                ...List.generate(
+                  _overviews.length,
+                  (index) => OverviewCard(
+                    icon: _overviews[index]['icon'],
+                    title: _overviews[index]['title'],
+                    description: _overviews[index]['info'],
+                    amount: _overviews[index]['amount'],
+                    hasIconBg: true,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: Theme(

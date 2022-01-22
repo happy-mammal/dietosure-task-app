@@ -34,7 +34,7 @@ class _InfoCardState extends State<InfoCard> {
           ),
           SizedBox(height: 10.w),
           CircleAvatar(
-            backgroundColor: const Color(0xFF3e4685),
+            backgroundImage: const AssetImage("assets/profile1.jpg"),
             radius: 45.w,
           ),
           SizedBox(height: 10.w),
